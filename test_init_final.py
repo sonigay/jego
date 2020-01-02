@@ -975,7 +975,7 @@ while True:
 							result = wks.acell(basicSetting[16]).value
 
 							embed = discord.Embed(
-									description= '```' + SearchID + ' 재고현황 은 ' + result + ' 입니다.```',
+									description= '```' + SearchID + ' 재고현황 ' + result + ' 입니다.```',
 									color=0xff00ff
 									)
 							await msg.channel.send(embed=embed, tts=False)
@@ -1905,7 +1905,7 @@ while True:
 					result = wks.acell(basicSetting[16]).value
 
 					embed = discord.Embed(
-							description= '```' + SearchID + ' 재고 현황은 ' + result + ' 입니다.```',
+							description= '```' + SearchID + ' 재고 현황 ' + result + ' 입니다.```',
 							color=0xff00ff
 							)
 					await msg.channel.send(embed=embed, tts=False)
