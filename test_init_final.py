@@ -1321,7 +1321,7 @@ while True:
 				command_list += command[9] + '\n'     #!미예약
 				command_list += command[10] + ' [인원] [금액]\n'     #!분배
 				command_list += command[11] + ' [뽑을인원수] [아이디1] [아이디2]...\n'     #!사다리
-				command_list += command[12] + ' [아이디]\n'     #!정산
+				command_list += command[12] + ' [아이디]\n'     #!모델별재고
 				command_list += command[13] + ' 또는 ' + command[14] + ' 0000, 00:00\n'     #!보스일괄
 				command_list += command[14] + '\n'     #!q
 				command_list += command[15] + ' [할말]\n'     #!v
@@ -1333,6 +1333,7 @@ while True:
 				command_list += command[19] + ' [할말]\n\n'     #!상태
 				command_list += command[20] + '\n'     #보스탐
 				command_list += command[21] + '\n'     #!보스탐
+				command_list += command[22] + ' [아이디]\n'     #!지역별재고
 				command_list += '[보스명]컷 또는 [보스명]컷 0000, 00:00\n'     
 				command_list += '[보스명]멍 또는 [보스명]멍 0000, 00:00\n'     
 				command_list += '[보스명]예상 또는 [보스명]예상 0000, 00:00\n' 
