@@ -987,9 +987,9 @@ while True:
 			
 		                	################ 지역별재고확인 ################ 
 
-					if message.content.startswith(command[23]):
+					if message.content.startswith(command[22]):
 						if basicSetting[10] !="" and basicSetting[12] !="" and basicSetting[17] !="" and basicSetting[18] !="" and basicSetting[19] !=""  :
-							SearchID = message.content[len(command[23])+1:]
+							SearchID = message.content[len(command[22])+1:]
 							gc = gspread.authorize(credentials)
 							wks = gc.open(basicSetting[12]).worksheet(basicSetting[17])
 
@@ -1935,9 +1935,9 @@ while True:
 					
 								################ 정산확인2 ################ 
 
-						if message.content.startswith(command[23]):
+						if message.content.startswith(command[22]):
 						if basicSetting[10] !="" and basicSetting[12] !="" and basicSetting[17] !="" and basicSetting[18] !="" and basicSetting[19] !=""  :
-							SearchID = message.content[len(command[23])+1:]
+							SearchID = message.content[len(command[22])+1:]
 							gc = gspread.authorize(credentials)
 							wks = gc.open(basicSetting[12]).worksheet(basicSetting[17])
 
