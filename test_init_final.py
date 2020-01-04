@@ -206,7 +206,7 @@ def init():
 	basicSetting.append(inputData[13][12:])    #basicSetting[14] : 모델별재고시트 이름
 	basicSetting.append(inputData[14][12:])    #basicSetting[15] : 모델별재고입력 셀
 	basicSetting.append(inputData[15][13:])    #basicSetting[16] : 모델별재고출력 셀
-        basicSetting.append(inputData[16][12:])    #basicSetting[17] : 지역별재고시트 이름
+	basicSetting.append(inputData[16][12:])    #basicSetting[17] : 지역별재고시트 이름
 	basicSetting.append(inputData[17][12:])    #basicSetting[18] : 지역별입력 셀
 	basicSetting.append(inputData[18][13:])    #basicSetting[19] : 지역별출력 셀
 
