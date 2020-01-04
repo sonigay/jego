@@ -984,8 +984,8 @@ while True:
 							await msg.channel.send(embed=embed, tts=False)
 		else :
 			message = await client.get_channel(channel).fetch_message(msg.id)
-			
-		                	################ 지역별재고확인 ################ 
+
+			################ 지역별재고확인 ################ 
 
 					if message.content.startswith(command[22]):
 						if basicSetting[10] !="" and basicSetting[12] !="" and basicSetting[17] !="" and basicSetting[18] !="" and basicSetting[19] !=""  :
@@ -1950,7 +1950,6 @@ while True:
 									color=0xff00ff
 									)
 							await msg.channel.send(embed=embed, tts=False)
-		
 					
 
 	client.loop.create_task(task())
