@@ -965,7 +965,7 @@ while True:
 				if msg.channel.id == int(basicSetting[11]) : #### 정산채널 채널ID 값넣으면 됨
 					message = await msg.channel.fetch_message(msg.id)
 
-					################ 모델별재고확인 ################ 
+					################ 모델별재고확인 ################
 
 					if message.content.startswith(command[12]):
 						if basicSetting[10] !="" and basicSetting[12] !="" and basicSetting[14] !="" and basicSetting[15] !="" and basicSetting[16] !=""  :
@@ -984,9 +984,7 @@ while True:
 							await msg.channel.send(embed=embed, tts=False)
 		else :
 			message = await client.get_channel(channel).fetch_message(msg.id)
-
-			################ 지역별재고확인 ################# 
-
+					################ 지역별재고확인 #################
 					if message.content.startswith(command[22]):
 						if basicSetting[10] !="" and basicSetting[12] !="" and basicSetting[17] !="" and basicSetting[18] !="" and basicSetting[19] !=""  :
 							SearchID = message.content[len(command[22])+1:]
