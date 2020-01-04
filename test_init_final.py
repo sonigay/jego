@@ -985,24 +985,22 @@ while True:
 		else :
 			message = await client.get_channel(channel).fetch_message(msg.id)
 					################ 지역별재고확인 #################
-
-					if message.content.startswith(command[22]):
-                                            if basicSetting[10] !="" and basicSetting[12] !="" and basicSetting[17] !="" and basicSetting[18] !="" and basicSetting[19] !=""  :
-							SearchID = message.content[len(command[22])+1:]
-							gc = gspread.authorize(credentials)
-							wks = gc.open(basicSetting[12]).worksheet(basicSetting[17])
-
-							wks.update_acell(basicSetting[18], SearchID)
-
-							result = wks.acell(basicSetting[19]).value
-
-							embed = discord.Embed(
-									description= '```' + SearchID + '  ' + result + ' ```',
-									color=0xff00ff
-									)
-							await msg.channel.send(embed=embed, tts=False)
+				
+			if message.content.startswith(command[22]):
+				if basicsetting[10] !="" and basicSetting[12] !="" and basicSetting[17] !="" and basicSetting[18] !="" and basicSetting[19] !=""  :
+					SearchID = message.content[len(command[22])+1:]
+					gc = gspread.authorize(credentials)
+					wks = gc.open(basicSetting[18], SearchID)
+					
+					result = wks.acell(basicSetting[19]).value
+					
+					embed = discord.Embed(
+							description='```' + SearchID + ' ' + result + /'```',
+							color=0xff00ff
+							)
+					await msg.channel.send(embed=embed, tts=false)
 		else :
-			message = await client.get_channel(channel).fetch_message(msg.id)
+			message = await client.get_channel(channel).fetch_messge(msg.id)
 			
 			################ 텍스트 정보확인 ################ 
 
