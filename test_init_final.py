@@ -1079,7 +1079,7 @@ while True:
 
 			################ 텍스트채널이동 ################ 
 
-			if message.content.startswith(command[3]):
+                        if message.content.startswith(command[3]):
 				tmp_sayMessage1 = message.content
 				for i in range(len(channel_name)):
 					if  channel_name[i] == str(tmp_sayMessage1[len(command[3])+1:]):
