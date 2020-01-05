@@ -987,8 +987,8 @@ while True:
 			message = await client.get_channel(channel).fetch_message(msg.id)
 			
 						##################################
-			if basicSetting[11] != "":
-				if msg.channel.id == int(basicSetting[11]) : #### 정산채널 채널ID 값넣으면 됨
+			if basicSetting[20] != "":
+				if msg.channel.id == int(basicSetting[20]) : #### 정산채널 채널ID 값넣으면 됨
 					message = await msg.channel.fetch_message(msg.id)
 
 					################ 정산확인 ################ 
@@ -1934,7 +1934,7 @@ while True:
 					result = wks.acell(basicSetting[16]).value
 
 					embed = discord.Embed(
-							description= '```' + SearchID + '  ' + result + ' ```',
+							description= '```' + SearchID + ' 1 ' + result + ' ```',
 							color=0xff00ff
 							)
 					await msg.channel.send(embed=embed, tts=False)
