@@ -990,7 +990,9 @@ while True:
 				if basicSetting[10] !="" and basicSetting[12] !="" and basicSetting[17] !="" and basicSetting[18] !="" and basicSetting[19] !=""  :
 					SearchID = message.content[len(command[22])+1:]
 					gc = gspread.authorize(credentials)
-					wks = gc.open(basicSetting[18], SearchID)
+					wks = gc.open(basicSetting[12]).worksheet(basicSetting[17])
+					
+					wks.update_acell(basicSetting[18], SearchID)
 					
 					result = wks.acell(basicSetting[19]).value
 					
