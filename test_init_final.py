@@ -995,7 +995,7 @@ while True:
 					result = wks.acell(basicSetting[19]).value
 					
 					embed = discord.Embed(
-							description='```' + SearchID + ' ' + result + /'```',
+							description='```' + SearchID + ' ' + result + ' ```',
 							color=0xff00ff
 							)
 					await msg.channel.send(embed=embed, tts=false)
