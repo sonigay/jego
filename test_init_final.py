@@ -1099,10 +1099,10 @@ while True:
 
         contents = repo.get_contents("test_setting.ini")
         repo.update_file(contents.path, "test_setting", result_textCH, contents.sha)
+	
+	await client.get_channel(channel).send('< ' + client.get_channel(channel).name + ' 이동완료>', tts=False)
 
-        await client.get_channel(channel).send('< ' + client.get_channel(channel).name + ' 이동완료>', tts=False)
-
-    hello = message.content
+	hello = message.content
 
     ##################################
 
