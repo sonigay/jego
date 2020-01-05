@@ -1075,7 +1075,7 @@ while True:
             value='```' + ch_voice_information + '```',
             inline=False
         )
-    await client.get_channel(channel).send(embed=embed, tts=False)
+        await client.get_channel(channel).send(embed=embed, tts=False)
 
     ################ 텍스트채널이동 ################
 
