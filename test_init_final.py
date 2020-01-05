@@ -843,8 +843,10 @@ async def on_ready():
 		print('< 음성채널 [' + client.get_channel(basicSetting[6]).name + '] 접속완료>')
 		if basicSetting[8] != "":
 			('< 사다리채널 [' + client.get_channel(int(basicSetting[8])).name + '] 접속완료>')
+		if basicSetting[20] != "":
+			print('< 정산채널2 [' + client.get_channel(int(basicSetting[20])).name + '] 접속완료>')
 		if basicSetting[11] != "":
-			print('< 정산채널 [' + client.get_channel(int(basicSetting[11])).name + '] 접속완료>')
+			print('< 정산채널 [' + client.get_channel(int(basicSetting[11])).name + '] 접속완료>')			
 		if int(basicSetting[13]) != 0 :
 			print('< 보탐봇 재시작 시간 ' + endTime.strftime('%Y-%m-%d ') + endTime.strftime('%H:%M:%S') + ' >')
 			print('< 보탐봇 재시작 주기 ' + basicSetting[13] + '일 >')
