@@ -206,9 +206,9 @@ def init():
 	basicSetting.append(inputData[13][12:])    #basicSetting[14] : 모델별재고시트 이름
 	basicSetting.append(inputData[14][12:])    #basicSetting[15] : 모델별재고입력 셀
 	basicSetting.append(inputData[15][13:])    #basicSetting[16] : 모델별재고출력 셀
-	basicSetting.append(inputData[16][12:])  # basicSetting[17] : 지역별재고시트 이름
-	basicSetting.append(inputData[17][12:])  # basicSetting[18] : 지역별입력 셀
-	basicSetting.append(inputData[18][13:])  # basicSetting[19] : 지역별출력 셀
+	basicSetting.append(inputData[16][12:])    #basicSetting[17] : 지역별재고시트 이름
+	basicSetting.append(inputData[17][12:])    #basicSetting[18] : 지역별입력 셀
+	basicSetting.append(inputData[18][13:])    #basicSetting[19] : 지역별출력 셀
 
 	############## 보탐봇 명령어 리스트 #####################
 	for i in range(len(command_inputData)):
@@ -985,23 +985,23 @@ while True:
 		else :
 			message = await client.get_channel(channel).fetch_message(msg.id)
 
-					if message.content.startswith(command[22]):
-						if basicSetting[10] !="" and basicSetting[12] !="" and basicSetting[17] !="" and basicSetting[18] !="" and basicSetting[19] !=""  :
-							SearchID = message.content[len(command[22])+1:]
-							gc = gspread.authorize(credentials)
-							wks = gc.open(basicSetting[12]).worksheet(basicSetting[17])
+						if message.content.startswith(command[22]):
+							if basicSetting[10] !="" and basicSetting[12] !="" and basicSetting[17] !="" and basicSetting[18] !="" and basicSetting[19] !=""  :
+								SearchID = message.content[len(command[22])+1:]
+								gc = gspread.authorize(credentials)
+								wks = gc.open(basicSetting[12]).worksheet(basicSetting[17])
 							
-							wks.update_acell(basicSetting[18], SearchID)
+								wks.update_acell(basicSetting[18], SearchID)
 							
-							result = wks.acell(basicSetting[18]).value
+								result = wks.acell(basicSetting[18]).value
 							
-							embed = discord.Embed(
-									description= '```' + SearchID + ' ' + result + ' ```',
-									color=0xff00ff
-									)
-							await msg.channel.send(embed=embed, tts=False)
-		else :
-			message = await client.get_channel(channel).fetch_message(msg.id)
+								embed = discord.Embed(
+										description= '```' + SearchID + ' ' + result + ' ```',
+										color=0xff00ff
+										)
+								await msg.channel.send(embed=embed, tts=False)
+			else :
+				message = await client.get_channel(channel).fetch_message(msg.id)
 
 			################ 텍스트 정보확인 ################ 
 
