@@ -999,8 +999,6 @@ while True:
 							color=0xff00ff
 							)
 					await msg.channel.send(embed=embed, tts=false)
-		else :
-			message = await client.get_channel(channel).fetch_messge(msg.id)
 			
 			################ 텍스트 정보확인 ################ 
 
