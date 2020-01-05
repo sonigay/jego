@@ -1551,6 +1551,8 @@ while True:
 				setting_val += '텍스트채널 : ' + client.get_channel(basicSetting[7]).name +'\n'
 				if basicSetting[8] != "" :
 					setting_val += '사다리채널 : ' + client.get_channel(int(basicSetting[8])).name + '\n'
+				if basicSetting[20] != "" :
+					setting_val += '정산채널2 : ' + client.get_channel(int(basicSetting[20])).name + '\n'
 				if basicSetting[11] != "" :
 					setting_val += '정산채널 : ' + client.get_channel(int(basicSetting[11])).name + '\n'
 				setting_val += '보스젠알림시간1 : ' + basicSetting[1] + ' 분 전\n'
