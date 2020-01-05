@@ -1077,34 +1077,34 @@ while True:
                         )
                 await client.get_channel(channel).send(embed=embed, tts=False)
 
-			################ 텍스트채널이동 ################ 
+    ################ 텍스트채널이동 ################ 
 
-                        if message.content.startswith(command[3]):
-                            tmp_sayMessage1 = message.content
-			    for i in range(len(channel_name)):
-			    if  channel_name[i] == str(tmp_sayMessage1[len(command[3])+1:]):
-			        channel = int(channel_id[i])
-						
-				inidata_textCH = repo.get_contents("test_setting.ini")
-				file_data_textCH = base64.b64decode(inidata_textCH.content)
-				file_data_textCH = file_data_textCH.decode('utf-8')
-				inputData_textCH = file_data_textCH.split('\n')
-				
-				for i in range(len(inputData_textCH)):
-				    if inputData_textCH[i] == 'textchannel = ' + str(basicSetting[7]) + '\r':
-					inputData_textCH[i] = 'textchannel = ' + str(channel) + '\r'
-					basicSetting[7] = int(channel)
-				
-				result_textCH = '\n'.join(inputData_textCH)
+    if message.content.startswith(command[3]):
+        tmp_sayMessage1 = message.content
+        for i in range(len(channel_name)):
+            if channel_name[i] == str(tmp_sayMessage1[len(command[3]) + 1:]):
+                channel = int(channel_id[i])
 
-				contents = repo.get_contents("test_setting.ini")
-				repo.update_file(contents.path, "test_setting", result_textCH, contents.sha)
-					
-				await client.get_channel(channel).send('< ' + client.get_channel(channel).name + ' 이동완료>', tts=False)
-			
-			hello = message.content
+        inidata_textCH = repo.get_contents("test_setting.ini")
+        file_data_textCH = base64.b64decode(inidata_textCH.content)
+        file_data_textCH = file_data_textCH.decode('utf-8')
+        inputData_textCH = file_data_textCH.split('\n')
 
-			##################################
+        for i in range(len(inputData_textCH)):
+            if inputData_textCH[i] == 'textchannel = ' + str(basicSetting[7]) + '\r':
+                inputData_textCH[i] = 'textchannel = ' + str(channel) + '\r'
+                basicSetting[7] = int(channel)
+
+        result_textCH = '\n'.join(inputData_textCH)
+
+        contents = repo.get_contents("test_setting.ini")
+        repo.update_file(contents.path, "test_setting", result_textCH, contents.sha)
+
+        await client.get_channel(channel).send('< ' + client.get_channel(channel).name + ' 이동완료>', tts=False)
+
+    hello = message.content
+
+    ##################################
 
 			for i in range(bossNum):
 				################ 보스 컷처리 ################ 
