@@ -209,6 +209,7 @@ def init():
 	basicSetting.append(inputData[16][12:])    #basicSetting[17] : 지역별재고시트 이름
 	basicSetting.append(inputData[17][12:])    #basicSetting[18] : 지역별입력 셀
 	basicSetting.append(inputData[18][13:])    #basicSetting[19] : 지역별출력 셀
+	basicSetting.append(inputData[19][18:])     #basicSetting[20] : 정산 채널 ID 2
 
 	############## 보탐봇 명령어 리스트 #####################
 	for i in range(len(command_inputData)):
