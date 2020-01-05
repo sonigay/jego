@@ -1080,10 +1080,10 @@ while True:
 			################ 텍스트채널이동 ################ 
 
                         if message.content.startswith(command[3]):
-				tmp_sayMessage1 = message.content
-				for i in range(len(channel_name)):
-					if  channel_name[i] == str(tmp_sayMessage1[len(command[3])+1:]):
-						channel = int(channel_id[i])
+                            tmp_sayMessage1 = message.content
+			    for i in range(len(channel_name)):
+			    if  channel_name[i] == str(tmp_sayMessage1[len(command[3])+1:]):
+			        channel = int(channel_id[i])
 						
 				inidata_textCH = repo.get_contents("test_setting.ini")
 				file_data_textCH = base64.b64decode(inidata_textCH.content)
@@ -1091,9 +1091,9 @@ while True:
 				inputData_textCH = file_data_textCH.split('\n')
 				
 				for i in range(len(inputData_textCH)):
-					if inputData_textCH[i] == 'textchannel = ' + str(basicSetting[7]) + '\r':
-						inputData_textCH[i] = 'textchannel = ' + str(channel) + '\r'
-						basicSetting[7] = int(channel)
+				    if inputData_textCH[i] == 'textchannel = ' + str(basicSetting[7]) + '\r':
+					inputData_textCH[i] = 'textchannel = ' + str(channel) + '\r'
+					basicSetting[7] = int(channel)
 				
 				result_textCH = '\n'.join(inputData_textCH)
 
