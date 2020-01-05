@@ -1000,7 +1000,7 @@ while True:
 							description='```' + SearchID + ' ' + result + ' ```',
 							color=0xff00ff
 							)
-					await msg.channel.send(embed=embed, tts=false)
+					await msg.channel.send(embed=embed, tts=False)
 			
 			################ 텍스트 정보확인 ################ 
 
