@@ -1052,7 +1052,7 @@ while True:
 					message = await msg.channel.fetch_message(msg.id)
 
 					################ 정산확인 ################ 
-			if message.content.startswith(command[12]):
+                        if message.content.startswith(command[12]):
 				if basicSetting[10] !="" and basicSetting[12] !="" and basicSetting[14] !="" and basicSetting[15] !="" and basicSetting[16] !=""  :
 					SearchID = message.content[len(command[12])+1:]
 					gc = gspread.authorize(credentials)
