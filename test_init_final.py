@@ -1073,30 +1073,30 @@ while True:
 
 			################ 텍스트 정보확인 ################
 					if message.content == command[2]:
-					ch_information = ''
-					for i in range(len(channel_name)):
-						ch_information += '[' + channel_id[i] + '] ' + channel_name[i] + '\n'
-					ch_voice_information = ''
-					for i in range(len(channel_voice_name)):
-						ch_voice_information += '[' + channel_voice_id[i] + '] ' + channel_voice_name[i] + '\n'
-					print (ch_information)
-					print (ch_voice_information)
-					embed = discord.Embed(
-						title = "----- 채널 정보 -----",
-						description= '',
-						color=0xff00ff
-						)
-					embed.add_field(
-						name="< 택스트 채널 >",
-						value= '```' + ch_information + '```',
-						inline = False
-						)
-					embed.add_field(
-						name="< 보이스 채널 >",
-						value= '```' + ch_voice_information + '```',
-						inline = False
-						)
-					await client.get_channel(channel).send( embed=embed, tts=False)
+						ch_information = ''
+						for i in range(len(channel_name)):
+							ch_information += '[' + channel_id[i] + '] ' + channel_name[i] + '\n'
+						ch_voice_information = ''
+						for i in range(len(channel_voice_name)):
+							ch_voice_information += '[' + channel_voice_id[i] + '] ' + channel_voice_name[i] + '\n'
+						print (ch_information)
+						print (ch_voice_information)
+						embed = discord.Embed(
+							title = "----- 채널 정보 -----",
+							description= '',
+							color=0xff00ff
+							)
+						embed.add_field(
+							name="< 택스트 채널 >",
+							value= '```' + ch_information + '```',
+							inline = False
+							)
+						embed.add_field(
+							name="< 보이스 채널 >",
+							value= '```' + ch_voice_information + '```',
+							inline = False
+							)
+						await client.get_channel(channel).send( embed=embed, tts=False)
 
 			################ 텍스트채널이동 ################ 
 
