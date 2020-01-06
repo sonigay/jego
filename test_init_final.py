@@ -1052,23 +1052,23 @@ while True:
 					message = await msg.channel.fetch_message(msg.id)
 
 					################ 정산확인 ################ 
-                        if message.content.startswith(command[12]):
-				if basicSetting[10] !="" and basicSetting[12] !="" and basicSetting[14] !="" and basicSetting[15] !="" and basicSetting[16] !=""  :
-					SearchID = message.content[len(command[12])+1:]
-					gc = gspread.authorize(credentials)
-					wks = gc.open(basicSetting[12]).worksheet(basicSetting[14])
+					if message.content.startswith(command[12]):
+						if basicSetting[10] !="" and basicSetting[12] !="" and basicSetting[14] !="" and basicSetting[15] !="" and basicSetting[16] !=""  :
+							SearchID = message.content[len(command[12])+1:]
+							gc = gspread.authorize(credentials)
+							wks = gc.open(basicSetting[12]).worksheet(basicSetting[14])
 							
-					wks.update_acell(basicSetting[15], SearchID)
+							wks.update_acell(basicSetting[15], SearchID)
 							
-					result = wks.acell(basicSetting[16]).value
+							result = wks.acell(basicSetting[16]).value
 							
-					embed = discord.Embed(
-							description= '```' + SearchID + ' ' + result + ' ```',
-							color=0xff00ff
+						embed = discord.Embed(
+								description= '```' + SearchID + ' ' + result + ' ```',
+								color=0xff00ff
 									)
-					await msg.channel.send(embed=embed, tts=False)
-			else :
-				message = await client.get_channel(channel).fetch_message(msg.id)
+						await msg.channel.send(embed=embed, tts=False)
+				else :
+					message = await client.get_channel(channel).fetch_message(msg.id)
 
 			################ 텍스트 정보확인 ################ 
 
