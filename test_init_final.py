@@ -1429,7 +1429,7 @@ while True:
 					temp_bossTime2 = []
 					for i in range(bossNum):
 						if bossTimeString[i] == '99:99:99' :
-						temp_bossTime2.append(bossData[i][0])
+							temp_bossTime2.append(bossData[i][0])
 
 					if len(temp_bossTime2) != 0:
 						temp_bossTimeSTR1 = ','.join(map(str, temp_bossTime2))
