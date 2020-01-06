@@ -1503,24 +1503,24 @@ while True:
 						contents = repo.get_contents("test_setting.ini")
 						repo.update_file(contents.path, "test_setting", result_voiceCH, contents.sha)
 
-					elif basicSetting[6] != int(voice_channel.id):
-						inidata_voiceCH = repo.get_contents("test_setting.ini")
-						file_data_voiceCH = base64.b64decode(inidata_voiceCH.content)
-						file_data_voiceCH = file_data_voiceCH.decode('utf-8')
-						inputData_voiceCH = file_data_voiceCH.split('\n')
+						elif basicSetting[6] != int(voice_channel.id):
+							inidata_voiceCH = repo.get_contents("test_setting.ini")
+							file_data_voiceCH = base64.b64decode(inidata_voiceCH.content)
+							file_data_voiceCH = file_data_voiceCH.decode('utf-8')
+							inputData_voiceCH = file_data_voiceCH.split('\n')
 
-						for i in range(len(inputData_voiceCH)):
-							if inputData_voiceCH[i] == 'voicechannel = ' + str(basicSetting[6]) + '\r':
-								inputData_voiceCH[i] = 'voicechannel = ' + str(voice_channel.id) + '\r'
-								basicSetting[6] = int(voice_channel.id)
+							for i in range(len(inputData_voiceCH)):
+								if inputData_voiceCH[i] == 'voicechannel = ' + str(basicSetting[6]) + '\r':
+									inputData_voiceCH[i] = 'voicechannel = ' + str(voice_channel.id) + '\r'
+									basicSetting[6] = int(voice_channel.id)
 
-						result_voiceCH = '\n'.join(inputData_voiceCH)
+							result_voiceCH = '\n'.join(inputData_voiceCH)
 
-						contents = repo.get_contents("test_setting.ini")
-						repo.update_file(contents.path, "test_setting", result_voiceCH, contents.sha)
+							contents = repo.get_contents("test_setting.ini")
+							repo.update_file(contents.path, "test_setting", result_voiceCH, contents.sha)
 
-					await JointheVC(voice_channel, channel)
-					await client.get_channel(channel).send('< 음성채널 [' + client.get_channel(voice_channel.id).name + '] 접속완료>', tts=False)
+						await JointheVC(voice_channel, channel)
+						await client.get_channel(channel).send('< 음성채널 [' + client.get_channel(voice_channel.id).name + '] 접속완료>', tts=False)
 			
 			################ 저장된 정보 초기화 ################
 						
