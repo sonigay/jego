@@ -1524,37 +1524,37 @@ while True:
 				
 			################ 저장된 정보 초기화 ################
 						
-			if message.content == command[6] :
-				basicSetting = []
-				bossData = []
-				fixed_bossData = []
+				if message.content == command[6] :
+					basicSetting = []
+					bossData = []
+					fixed_bossData = []
 
-				bossTime = []
-				tmp_bossTime = []
+					bossTime = []
+					tmp_bossTime = []
 
-				fixed_bossTime = []
+					fixed_bossTime = []
 
-				bossTimeString = []
-				bossDateString = []
-				tmp_bossTimeString = []
-				tmp_bossDateString = []
+					bossTimeString = []
+					bossDateString = []
+					tmp_bossTimeString = []
+					tmp_bossDateString = []
 
-				bossFlag = []
-				bossFlag0 = []
-				fixed_bossFlag = []
-				fixed_bossFlag0 = []
-				bossMungFlag = []
-				bossMungCnt = []
+					bossFlag = []
+					bossFlag0 = []
+					fixed_bossFlag = []
+					fixed_bossFlag0 = []
+					bossMungFlag = []
+					bossMungCnt = []
 
-				FixedBossDateData = []
-				indexFixedBossname = []
+					FixedBossDateData = []
+					indexFixedBossname = []
 				
-				init()
+					init()
 
-				await dbSave()
+					await dbSave()
 
-				await client.get_channel(channel).send('<초기화 완료>', tts=False)
-				print ("<초기화 완료>")
+					await client.get_channel(channel).send('<초기화 완료>', tts=False)
+					print ("<초기화 완료>")
 
 			################ 보스타임 일괄 설정 ################
 			
