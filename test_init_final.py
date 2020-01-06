@@ -1045,11 +1045,10 @@ while True:
 		global regenembed
 		
 		id = msg.author.id #id라는 변수에는 메시지를 보낸사람의 ID를 담습니다.
-
 		
-			if basicSetting[11] != "":
-				if msg.channel.id == int(basicSetting[11]) : #### 정산채널 채널ID 값넣으면 됨
-					message = await msg.channel.fetch_message(msg.id)
+		if basicSetting[11] != "":
+			if msg.channel.id == int(basicSetting[11]) : #### 정산채널 채널ID 값넣으면 됨
+				message = await msg.channel.fetch_message(msg.id)
 
 					################ 정산확인 ################ 
 			if message.content.startswith(command[12]):
