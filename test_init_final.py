@@ -1000,31 +1000,6 @@ while True:
 		
 		global basicSetting
 		global bossData
-		global fixed_bossData
-
-		global bossNum
-		global fixed_bossNum
-		global chkvoicechannel
-		global chkrelogin
-
-		global bossTime
-		global tmp_bossTime
-
-		global fixed_bossTime
-
-		global bossTimeString
-		global bossDateString
-		global tmp_bossTimeString
-		global tmp_bossDateString
-
-		global bossFlag
-		global bossFlag0
-		global bossMungFlag
-		global bossMungCnt
-		
-		global voice_client1
-			
-		global task1
 		
 		global channel_info
 		global channel_name
@@ -1032,17 +1007,7 @@ while True:
 		global channel_voice_name
 		global channel_voice_id
 		global channel_type
-		
-		global chflg
-		global LoadChk
-		
-		global indexFixedBossname
-		global FixedBossDateData
-		
-		global gc #정산
-		global credentials	#정산
 
-		global regenembed
 		
 		id = msg.author.id #id라는 변수에는 메시지를 보낸사람의 ID를 담습니다.
 
