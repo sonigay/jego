@@ -1372,99 +1372,99 @@ while True:
 
 			################ 사다리 결과 출력 ################ 
 
-			if message.content.startswith(command[11]):
-				ladder = []
-				ladder = message.content[len(command[11])+1:].split(" ")
-				num_cong = int(ladder[0])
-				del(ladder[0])
-				await LadderFunc(num_cong, ladder, client.get_channel(channel))
+				if message.content.startswith(command[11]):
+					ladder = []
+					ladder = message.content[len(command[11])+1:].split(" ")
+					num_cong = int(ladder[0])
+					del(ladder[0])
+					await LadderFunc(num_cong, ladder, client.get_channel(channel))
 				
 			################ 보탐봇 메뉴 출력 ################
 			
-			if message.content == command[0]:
-				command_list = ''
-				command_list += command[1] + '\n'     #!설정확인
-				command_list += command[2] + '\n'     #!채널확인
-				command_list += command[3] + ' [채널명]\n'     #!채널이동
-				command_list += command[4] + '\n'     #!소환
-				command_list += command[5] + '\n'     #!불러오기
-				command_list += command[6] + '\n'     #!초기화
-				command_list += command[7] + '\n'     #!명치
-				command_list += command[8] + '\n'     #!재시작
-				command_list += command[9] + '\n'     #!미예약
-				command_list += command[10] + ' [인원] [금액]\n'     #!분배
-				command_list += command[11] + ' [뽑을인원수] [아이디1] [아이디2]...\n'     #!사다리
-				command_list += command[12] + ' [아이디]\n'     #!정산
-				command_list += command[13] + ' 또는 ' + command[14] + ' 0000, 00:00\n'     #!보스일괄
-				command_list += command[14] + '\n'     #!q
-				command_list += command[15] + ' [할말]\n'     #!v
-				command_list += command[16] + '\n'     #!리젠
-				command_list += command[17] + '\n'     #!현재시간
-				command_list += command[18] + '\n'     #!공지
-				command_list += command[18] + ' [공지내용]\n'     #!공지
-				command_list += command[18] + '삭제\n'     #!공지
-				command_list += command[19] + ' [할말]\n\n'     #!상태
-				command_list += command[20] + '\n'     #보스탐
-				command_list += command[21] + '\n'     #!보스탐
-				command_list += command[22] + ' [아이디]\n'  # !지역별재고
-				command_list += '[보스명]컷 또는 [보스명]컷 0000, 00:00\n'     
-				command_list += '[보스명]멍 또는 [보스명]멍 0000, 00:00\n'     
-				command_list += '[보스명]예상 또는 [보스명]예상 0000, 00:00\n' 
-				command_list += '[보스명]삭제\n'     
-				command_list += '[보스명]메모 [할말]\n'
-				embed = discord.Embed(
-						title = "----- 명령어 -----",
-						description= '```' + command_list + '```',
-						color=0xff00ff
-						)
-				embed.add_field(
-						name="----- 추가기능 -----",
-						value= '```[보스명]컷/멍/예상  [할말] : 보스시간 입력 후 빈칸 두번!! 메모 가능```'
-						)
-				await client.get_channel(channel).send( embed=embed, tts=False)
+				if message.content == command[0]:
+					command_list = ''
+					command_list += command[1] + '\n'     #!설정확인
+					command_list += command[2] + '\n'     #!채널확인
+					command_list += command[3] + ' [채널명]\n'     #!채널이동
+					command_list += command[4] + '\n'     #!소환
+					command_list += command[5] + '\n'     #!불러오기
+					command_list += command[6] + '\n'     #!초기화
+					command_list += command[7] + '\n'     #!명치
+					command_list += command[8] + '\n'     #!재시작
+					command_list += command[9] + '\n'     #!미예약
+					command_list += command[10] + ' [인원] [금액]\n'     #!분배
+					command_list += command[11] + ' [뽑을인원수] [아이디1] [아이디2]...\n'     #!사다리
+					command_list += command[12] + ' [아이디]\n'     #!정산
+					command_list += command[13] + ' 또는 ' + command[14] + ' 0000, 00:00\n'     #!보스일괄
+					command_list += command[14] + '\n'     #!q
+					command_list += command[15] + ' [할말]\n'     #!v
+					command_list += command[16] + '\n'     #!리젠
+					command_list += command[17] + '\n'     #!현재시간
+					command_list += command[18] + '\n'     #!공지
+					command_list += command[18] + ' [공지내용]\n'     #!공지
+					command_list += command[18] + '삭제\n'     #!공지
+					command_list += command[19] + ' [할말]\n\n'     #!상태
+					command_list += command[20] + '\n'     #보스탐
+					command_list += command[21] + '\n'     #!보스탐
+					command_list += command[22] + ' [아이디]\n'  # !지역별재고
+					command_list += '[보스명]컷 또는 [보스명]컷 0000, 00:00\n'     
+					command_list += '[보스명]멍 또는 [보스명]멍 0000, 00:00\n'     
+					command_list += '[보스명]예상 또는 [보스명]예상 0000, 00:00\n' 
+					command_list += '[보스명]삭제\n'     
+					command_list += '[보스명]메모 [할말]\n'
+					embed = discord.Embed(
+							title = "----- 명령어 -----",
+							description= '```' + command_list + '```',
+							color=0xff00ff
+							)
+					embed.add_field(
+							name="----- 추가기능 -----",
+							value= '```[보스명]컷/멍/예상  [할말] : 보스시간 입력 후 빈칸 두번!! 메모 가능```'
+							)
+					await client.get_channel(channel).send( embed=embed, tts=False)
 
 			################ 미예약 보스타임 출력 ################ 
 
-			if message.content == command[9]:
-				temp_bossTime2 = []
-				for i in range(bossNum):
-					if bossTimeString[i] == '99:99:99' :
+				if message.content == command[9]:
+					temp_bossTime2 = []
+					for i in range(bossNum):
+						if bossTimeString[i] == '99:99:99' :
 						temp_bossTime2.append(bossData[i][0])
 
-				if len(temp_bossTime2) != 0:
-					temp_bossTimeSTR1 = ','.join(map(str, temp_bossTime2))
-					temp_bossTimeSTR1 = '```fix\n' + temp_bossTimeSTR1 + '\n```'
-				else:
-					temp_bossTimeSTR1 = '``` ```'
+					if len(temp_bossTime2) != 0:
+						temp_bossTimeSTR1 = ','.join(map(str, temp_bossTime2))
+						temp_bossTimeSTR1 = '```fix\n' + temp_bossTimeSTR1 + '\n```'
+					else:
+						temp_bossTimeSTR1 = '``` ```'
 						
-				embed = discord.Embed(
-						title = "----- 미예약보스 -----",
-						description= temp_bossTimeSTR1,
-						color=0x0000ff
-						)
-				await client.get_channel(channel).send( embed=embed, tts=False)
+					embed = discord.Embed(
+							title = "----- 미예약보스 -----",
+							description= temp_bossTimeSTR1,
+							color=0x0000ff
+							)
+					await client.get_channel(channel).send( embed=embed, tts=False)
 
 			################ 음성파일 생성 후 재생 ################ 			
 				
-			if message.content.startswith(command[15]) or message.content.startswith('!ㅍ') or message.content.startswith('!V'):
-				tmp_sayMessage = message.content
-				sayMessage = tmp_sayMessage[len(command[15])+1:]
-				await MakeSound(message.author.display_name +'님이.' + sayMessage, './sound/say')
-				await client.get_channel(channel).send("```< " + msg.author.display_name + " >님이 \"" + sayMessage + "\"```", tts=False)
-				await PlaySound(voice_client1, './sound/say.wav')
+				if message.content.startswith(command[15]) or message.content.startswith('!ㅍ') or message.content.startswith('!V'):
+					tmp_sayMessage = message.content
+					sayMessage = tmp_sayMessage[len(command[15])+1:]
+					await MakeSound(message.author.display_name +'님이.' + sayMessage, './sound/say')
+					await client.get_channel(channel).send("```< " + msg.author.display_name + " >님이 \"" + sayMessage + "\"```", tts=False)
+					await PlaySound(voice_client1, './sound/say.wav')
 
 			################ 보탐봇 재시작 ################ 
 
-			if message.content == command[8] :
-				if basicSetting[2] != '0':
-					for i in range(bossNum):
-						if bossMungFlag[i] == True:
-							bossTimeString[i] = tmp_bossTime[i].strftime('%H:%M:%S')
-							bossDateString[i] = tmp_bossTime[i].strftime('%Y-%m-%d')
-				await dbSave()
-				#await FixedBossDateSave()
-				#await client.get_channel(channel).send('<보탐봇 재시작 중... 갑자기 인사해도 놀라지마세요!>', tts=False)
-				print("보탐봇강제재시작!")
+				if message.content == command[8] :
+					if basicSetting[2] != '0':
+						for i in range(bossNum):
+							if bossMungFlag[i] == True:
+								bossTimeString[i] = tmp_bossTime[i].strftime('%H:%M:%S')
+								bossDateString[i] = tmp_bossTime[i].strftime('%Y-%m-%d')
+					await dbSave()
+					#await FixedBossDateSave()
+					#await client.get_channel(channel).send('<보탐봇 재시작 중... 갑자기 인사해도 놀라지마세요!>', tts=False)
+					print("보탐봇강제재시작!")
 				await asyncio.sleep(2)
 
 				inidata_restart = repo_restart.get_contents("restart.txt")
