@@ -206,6 +206,9 @@ def init():
 	basicSetting.append(inputData[13][12:])    #basicSetting[14] : 시트 이름
 	basicSetting.append(inputData[14][12:])    #basicSetting[15] : 입력 셀
 	basicSetting.append(inputData[15][13:])    #basicSetting[16] : 출력 셀
+	basicSetting.append(inputData[16][12:])    #basicSetting[17] : 시트 이름
+	basicSetting.append(inputData[17][12:])    #basicSetting[18] : 입력 셀
+	basicSetting.append(inputData[18][13:])    #basicSetting[19] : 출력 셀
 
 	############## 보탐봇 명령어 리스트 #####################
 	for i in range(len(command_inputData)):
@@ -964,15 +967,15 @@ while True:
 
 					################ 정산확인 ################ 
 
-					if message.content.startswith(command[12]):
-						if basicSetting[10] !="" and basicSetting[12] !="" and basicSetting[14] !="" and basicSetting[15] !="" and basicSetting[16] !=""  :
-							SearchID = message.content[len(command[12])+1:]
+					if message.content.startswith(command[22]):
+						if basicSetting[10] !="" and basicSetting[12] !="" and basicSetting[17] !="" and basicSetting[18] !="" and basicSetting[19] !=""  :
+							SearchID = message.content[len(command[22])+1:]
 							gc = gspread.authorize(credentials)
-							wks = gc.open(basicSetting[12]).worksheet(basicSetting[14])
+							wks = gc.open(basicSetting[12]).worksheet(basicSetting[17])
 
-							wks.update_acell(basicSetting[15], SearchID)
+							wks.update_acell(basicSetting[18], SearchID)
 
-							result = wks.acell(basicSetting[16]).value
+							result = wks.acell(basicSetting[19]).value
 
 							embed = discord.Embed(
 									description= '```' + SearchID + '  ' + result + ' ```',
@@ -1310,6 +1313,7 @@ while True:
 				command_list += command[19] + ' [할말]\n\n'     #!상태
 				command_list += command[20] + '\n'     #보스탐
 				command_list += command[21] + '\n'     #!보스탐
+				command_list += command[22] + ' [아이디]\n'     #!정산
 				command_list += '[보스명]컷 또는 [보스명]컷 0000, 00:00\n'     
 				command_list += '[보스명]멍 또는 [보스명]멍 0000, 00:00\n'     
 				command_list += '[보스명]예상 또는 [보스명]예상 0000, 00:00\n' 
