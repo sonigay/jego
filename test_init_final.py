@@ -1899,15 +1899,15 @@ while True:
 
 			################ 정산확인 ################ 
 
-			if message.content.startswith(command[12]):
-				if basicSetting[10] !="" and basicSetting[12] !="" and basicSetting[14] !="" and basicSetting[15] !="" and basicSetting[16] !=""  :
-					SearchID = hello[len(command[12])+1:]
+			if message.content.startswith(command[22]):
+				if basicSetting[10] !="" and basicSetting[12] !="" and basicSetting[17] !="" and basicSetting[18] !="" and basicSetting[19] !=""  :
+					SearchID = hello[len(command[22])+1:]
 					gc = gspread.authorize(credentials)
-					wks = gc.open(basicSetting[12]).worksheet(basicSetting[14])
+					wks = gc.open(basicSetting[12]).worksheet(basicSetting[17])
 
-					wks.update_acell(basicSetting[15], SearchID)
+					wks.update_acell(basicSetting[18], SearchID)
 
-					result = wks.acell(basicSetting[16]).value
+					result = wks.acell(basicSetting[19]).value
 
 					embed = discord.Embed(
 							title = ' :calling:  ' + SearchID + ' 재고현황! ',
