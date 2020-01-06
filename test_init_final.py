@@ -1345,30 +1345,30 @@ while True:
 
 			################ ?????????????? ################ 
 
-			if message.content == '!오빠' :
-				await PlaySound(voice_client1, './sound/오빠.mp3')
-			if message.content == '!언니' :
-				await PlaySound(voice_client1, './sound/언니.mp3')
-			if message.content == '!형' :
-				await PlaySound(voice_client1, './sound/형.mp3')
-			if message.content == '!TJ' or message.content == '!tj' :
-				resultTJ = random.randrange(1,9)
-				await PlaySound(voice_client1, './sound/TJ' + str(resultTJ) +'.mp3')
+				if message.content == '!오빠' :
+					await PlaySound(voice_client1, './sound/오빠.mp3')
+				if message.content == '!언니' :
+					await PlaySound(voice_client1, './sound/언니.mp3')
+				if message.content == '!형' :
+					await PlaySound(voice_client1, './sound/형.mp3')
+				if message.content == '!TJ' or message.content == '!tj' :
+					resultTJ = random.randrange(1,9)
+					await PlaySound(voice_client1, './sound/TJ' + str(resultTJ) +'.mp3')
 
 
 			################ 분배 결과 출력 ################ 
 
-			if message.content.startswith(command[10]):
-				separate_money = []
-				separate_money = message.content[len(command[10])+1:].split(" ")
-				num_sep = int(separate_money[0])
-				cal_tax1 = math.ceil(float(separate_money[1])*0.05)
-				real_money = int(int(separate_money[1]) - cal_tax1)
-				cal_tax2 = int(real_money/num_sep) - math.ceil(float(int(real_money/num_sep))*0.95)
-				if num_sep == 0 :
-					await client.get_channel(channel).send('```분배 인원이 0입니다. 재입력 해주세요.```', tts=False)
-				else :
-					await client.get_channel(channel).send('```1차세금 : ' + str(cal_tax1) + '\n1차 수령액 : ' + str(real_money) + '\n분배자 거래소등록금액 : ' + str(int(real_money/num_sep)) + '\n2차세금 : ' + str(cal_tax2) + '\n인당 실수령액 : ' + str(int(float(int(real_money/num_sep))*0.95)) + '```', tts=False)
+				if message.content.startswith(command[10]):
+					separate_money = []
+					separate_money = message.content[len(command[10])+1:].split(" ")
+					num_sep = int(separate_money[0])
+					cal_tax1 = math.ceil(float(separate_money[1])*0.05)
+					real_money = int(int(separate_money[1]) - cal_tax1)
+					cal_tax2 = int(real_money/num_sep) - math.ceil(float(int(real_money/num_sep))*0.95)
+					if num_sep == 0 :
+						await client.get_channel(channel).send('```분배 인원이 0입니다. 재입력 해주세요.```', tts=False)
+					else :
+						await client.get_channel(channel).send('```1차세금 : ' + str(cal_tax1) + '\n1차 수령액 : ' + str(real_money) + '\n분배자 거래소등록금액 : ' + str(int(real_money/num_sep)) + '\n2차세금 : ' + str(cal_tax2) + '\n인당 실수령액 : ' + str(int(float(int(real_money/num_sep))*0.95)) + '```', tts=False)
 
 			################ 사다리 결과 출력 ################ 
 
