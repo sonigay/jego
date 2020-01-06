@@ -1098,8 +1098,23 @@ while True:
 							)
 						await client.get_channel(channel).send( embed=embed, tts=False)
 
+			
+			
+			
+			
+			
+			
+			
+			
+			
 			################ 텍스트채널이동 ################ 
 
+			
+			
+			
+			
+			
+			
 			if message.content.startswith(command[3]):
 				tmp_sayMessage1 = message.content
 				for i in range(len(channel_name)):
