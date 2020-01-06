@@ -989,8 +989,65 @@ while True:
 			message = await client.get_channel(channel).fetch_message(msg.id)
 			
 						##################################
-			if basicSetting[20] != "":
-				if msg.channel.id == int(basicSetting[20]) : #### 정산채널 채널ID 값넣으면 됨
+while True:
+	# 봇이 새로운 메시지를 수신했을때 동작되는 코드입니다.
+	@client.event
+	async def on_message(msg):
+		if msg.author.bot: #만약 메시지를 보낸사람이 봇일 경우에는
+			return None #동작하지 않고 무시합니다.
+
+		global channel
+		
+		global basicSetting
+		global bossData
+		global fixed_bossData
+
+		global bossNum
+		global fixed_bossNum
+		global chkvoicechannel
+		global chkrelogin
+
+		global bossTime
+		global tmp_bossTime
+
+		global fixed_bossTime
+
+		global bossTimeString
+		global bossDateString
+		global tmp_bossTimeString
+		global tmp_bossDateString
+
+		global bossFlag
+		global bossFlag0
+		global bossMungFlag
+		global bossMungCnt
+		
+		global voice_client1
+			
+		global task1
+		
+		global channel_info
+		global channel_name
+		global channel_id
+		global channel_voice_name
+		global channel_voice_id
+		global channel_type
+		
+		global chflg
+		global LoadChk
+		
+		global indexFixedBossname
+		global FixedBossDateData
+		
+		global gc #정산
+		global credentials	#정산
+
+		global regenembed
+		
+		id = msg.author.id #id라는 변수에는 메시지를 보낸사람의 ID를 담습니다.
+
+			if basicSetting[11] != "":
+				if msg.channel.id == int(basicSetting[11]) : #### 정산채널 채널ID 값넣으면 됨
 					message = await msg.channel.fetch_message(msg.id)
 
 					################ 정산확인 ################ 
