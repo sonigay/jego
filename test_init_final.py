@@ -978,8 +978,8 @@ while True:
 							result = wks.acell(basicSetting[16]).value
 
 							embed = discord.Embed(
-									title = '```조회하신' + SearchID + '재고현황은  ```',
-									description= '```' + SearchID + '  ' + result + ' ```',
+									title = ' ▣ ' + SearchID + ' 재고현황! ',
+									description= '```' +  + '  ' + result + ' ```',
 									color=0xff00ff
 									)
 							await msg.channel.send(embed=embed, tts=False)
