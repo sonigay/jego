@@ -1481,22 +1481,22 @@ while True:
 				
 			################ 보탐봇 음성채널 소환 ################ 
 
-				if message.content == command[4]:
-					if message.author.voice == None:
-						await client.get_channel(channel).send('음성채널에 먼저 들어가주세요.', tts=False)
-					else:
-						voice_channel = message.author.voice.channel
+			if message.content == command[4]:
+				if message.author.voice == None:
+					await client.get_channel(channel).send('음성채널에 먼저 들어가주세요.', tts=False)
+				else:
+					voice_channel = message.author.voice.channel
 
-						if basicSetting[6] == "":
-							inidata_voiceCH = repo.get_contents("test_setting.ini")
-							file_data_voiceCH = base64.b64decode(inidata_voiceCH.content)
-							file_data_voiceCH = file_data_voiceCH.decode('utf-8')
-							inputData_voiceCH = file_data_voiceCH.split('\n')
+					if basicSetting[6] == "":
+						inidata_voiceCH = repo.get_contents("test_setting.ini")
+						file_data_voiceCH = base64.b64decode(inidata_voiceCH.content)
+						file_data_voiceCH = file_data_voiceCH.decode('utf-8')
+						inputData_voiceCH = file_data_voiceCH.split('\n')
 
-							for i in range(len(inputData_voiceCH)):
-								if inputData_voiceCH[i] == 'voicechannel = \r':
-									inputData_voiceCH[i] = 'voicechannel = ' + str(voice_channel.id) + '\r'
-									basicSetting[6] = int(voice_channel.id)
+						for i in range(len(inputData_voiceCH)):
+							if inputData_voiceCH[i] == 'voicechannel = \r':
+								inputData_voiceCH[i] = 'voicechannel = ' + str(voice_channel.id) + '\r'
+								basicSetting[6] = int(voice_channel.id)
 
 						result_voiceCH = '\n'.join(inputData_voiceCH)
 
