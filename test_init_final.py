@@ -972,6 +972,7 @@ while True:
 							SearchID = message.content[len(command[12])+1:]
 							gc = gspread.authorize(credentials)
 							wks = gc.open(basicSetting[12]).worksheet(basicSetting[14])
+							user = client.get_user(message.author.id)
 
 							wks.update_acell(basicSetting[15], SearchID)
 
@@ -982,7 +983,7 @@ while True:
 									description= '```' + SearchID + ' 오전까지 내역입니다. ' + result + '실시간조회가 아니라서 다소 차이가 있을수 있습니다. ```',
 									color=0xff00ff
 									)
-							await msg.channel.send(embed=embed, tts=False)
+							await user.send(embed=embed, tts=False)
 		else :
 			message = await client.get_channel(channel).fetch_message(msg.id)
 			
